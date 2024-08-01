@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .a{
+         font-size: 2rem;
+         color: white;
+         margin-left: 6rem;
+         align-items: flex-end;
+         display: block;
+         float: right;
+      }
+      .a:hover{
+         color: blue;
+      }
+   </style>
+   
+</head>
+<body>
+   <h1 style=font-family:Arial, Helvetica, sans-serif">Book Project</h1>
+   <a href="/"style=font-family:Arial, Helvetica, sans-serif">Home</a>
+   <a href="/add/" style=font-family:Arial, Helvetica, sans-serif" >Add Book</a>
+   <a href="/list/" style=font-family:Arial, Helvetica, sans-serif">Books</a>
+  
+
+   <h1>Update Book</h1>
+   <form action="/edit/{{ book.id }}" method="post" >
+      {% csrf_token %}
+      <table border="2" style="margin-left:auto; margin-right: auto;">
+         <!-- Table content -->
+
+         <tr>
+            <td>Title</td>
+            <td><input type="text" name="title" value="{{book.title}}"></td>
+         </tr>
+         <tr>
+            <td>Author</td>
+            <td><input type="text" name="author" value="{{ book.author }}"></td>
+         </tr>
+         <tr>
+            <td>Price</td>
+            <td><input type="text" name="price" value="{{ book.price }}"></td>
+         </tr>
+         <tr>
+            <th colspan="2"><input type="submit" value="Update  Book"></th>
+         </tr>
+      </table>
+   </form>
+</body>
+</html>
