@@ -4,12 +4,7 @@ from bookapp.models import Book
 
 # Create your views here.
 def home(request):
-   context = {}   
-   context['num1']=100
-   context['name']='raj'
-   context['num2']=150
-   context['data']=[10,20,30,40]
-   return render(request, 'index.html',context)
+   return render(request, 'index.html')
 
 def addbook(request):
    return render(request,'addbook.html')
